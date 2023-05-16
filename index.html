@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Todo app</title>
+</head>
+<body>
+    <div class="container">
+      <header class="todo-header">
+        <h1 class="todo-header__heading">TODO</h1>
+        <div class="todo-header__switch" id="night-mode-toggle">
+          <img src="images/icon-sun.svg" alt="sun icon"  class="todo-header__switch-icon">
+
+        </div>
+      </header>
+      <form class="todo-input" id="form">
+        <div class="icon"><i class="far fa-circle"></i></div>
+        <input id="item-input" type="text" placeholder="Create a new todo...">
+      </form>
+      <div class="list-container">
+        <ul id="item-list">
+        
+        </ul>
+        <div class="todo-footer" id="todo-footer">
+          <div class="todo-footer__left">
+            <span class="todo-footer__left-count" id="items-left">0 items left</span>
+          </div>
+          <div class="todo-footer__center">
+            <div class="todo-footer__right-btn btn" id="status-all">All</div>
+            <div class="todo-footer__right-btn btn" id="status-active">Active</div>
+            <div class="todo-footer__right-btn btn" id="status-complete">Completed</div>
+          </div>
+          <div class="todo-footer__clear" id="clear">Clear Completed</div>
+            </div>
+      </div>
+    <script src="app.js"></script>
+</body>
+</html>
