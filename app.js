@@ -1,3 +1,6 @@
+
+
+
 const toggleButton = document.getElementById('night-mode-toggle');
 const root = document.documentElement;
 
@@ -237,6 +240,14 @@ function toggleCircleActive(e) {
 const circleIcon = document.querySelector('.circle');
 
 
+// initialize Sortable
+
+function initSortableJS() {
+  const itemList = document.getElementById('item-list');
+
+  new Sortable(itemList);
+}
+
 function addEventListeners() {
     form.addEventListener('submit', addItem);
     itemList.addEventListener('click', removeItem);
@@ -250,4 +261,5 @@ function addEventListeners() {
 
   addEventListeners()
   checkUI()
+  initSortableJS()
 

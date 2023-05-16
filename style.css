@@ -139,7 +139,7 @@ body::after {
 }
 
 #item-input::placeholder {
-  color: var(--dark-grayish-blue);
+  color: var(--text-color);
 }
 
 #todo-footer {
@@ -207,6 +207,10 @@ li {
 .i.left-element span {
   margin-top: 3px;
   font-size: 12px;
+}
+
+.left-element span:hover {
+  cursor: pointer;
 }
 
 .i.left-element span.show {
@@ -337,6 +341,7 @@ li {
     font-size: 24px;
     display: flex;
     align-items: center;
+    color: var(--background-circle);
   }
 
   .circle {
