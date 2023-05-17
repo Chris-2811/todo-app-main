@@ -62,6 +62,10 @@ body {
 h1 {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 700;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 15px;
+  line-height: 40px;
 }
 
 body::after {
@@ -118,12 +122,24 @@ body::after {
   color: #fff;
 }
 
-.todo-header h1 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  letter-spacing: 15px;
-  line-height: 40px;
+.todo_header__switch-icon.sun {
+  background-image: url("images/icon-moon.svg");
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: cover;
+  height: 20px;
+  width: 20px;
 }
+
+.todo_header__switch-icon.moon {
+  background-image: url("images/icon-sun.svg");
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: cover;
+  height: 20px;
+  width: 20px;
+}
+
 
 #item-input {
   width: 100%;
@@ -274,17 +290,12 @@ li {
 }
 
 .circle {
-  border: 2px solid var(--very-light-grayish-blue);
+  border: 1px solid var(--very-light-grayish-blue);
   height: 20px;
   width: 20px;
   border-radius: 50%;
 }
 
-.circle.active {
-  background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
-  position: relative;
-  border: none;
-}
 
 .circle.active::before {
   content: "";
@@ -292,20 +303,26 @@ li {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: url("images/icon-check.svg");
+  background: url("images/icon-check.svg");
   background-repeat: no-repeat;
   background-position: center center;
   height: 20px;
   width: 20px;
   border-radius: 50%;
   border: none;
+  
 }
 
 .circle:hover {
-  border-color: #c058f3;
   cursor: pointer;
+  background: url(https://emiqdevtodoapp.netlify.app/7034fc05058ca6b2e0fe8dde621a9a75.svg);
+  border: none;
 }
-
+.circle.active {
+  background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+  position: relative;
+  border: none;
+}
 /*  Media Queries */
 
 @media (min-width: 540px) {
@@ -331,6 +348,22 @@ li {
   .container {
     width: 45%;
     max-width: 540px;
+  }
+
+  h1 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 15px;
+    line-height: 40px;
+  }
+  
+
+  .todo_header__switch-icon.sun,
+  .todo_header__switch-icon.moon {
+    height: 26px;
+    width: 26px;
   }
 
   #item-input {
@@ -417,9 +450,10 @@ li {
     padding: 0;
     top: 0;
     left: 0;
-    width: 0;
+    width: 50%;
     transform: translateX(0);
     padding: none;
+    border: none;
     background-color: var(--background-input);
   }
 

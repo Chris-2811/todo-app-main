@@ -13,7 +13,7 @@ const itemsLeft = document.getElementById('items-left');
 const statusAll = document.getElementById('status-all');
 const statusActive = document.getElementById('status-active');
 const statusCompleted = document.getElementById('status-complete');
-
+const nightModeIcon = document.querySelector('.todo_header__switch-icon');
 
 toggleButton.addEventListener('click', function(e) {
   root.classList.toggle('night-mode');
@@ -245,6 +245,18 @@ function initSortableJS() {
   new Sortable(itemList);
 }
 
+// Toggle Icon
+
+function toggleIcon(e) {
+  if(e.target.classList.contains('sun')) {
+    e.target.classList.remove('sun');
+    e.target.classList.add('moon')
+  } else {
+    e.target.classList.remove('moon');
+    e.target.classList.add('sun')
+  }
+}
+
 function addEventListeners() {
     form.addEventListener('submit', addItem);
     itemList.addEventListener('click', removeItem);
@@ -253,6 +265,7 @@ function addEventListeners() {
     statusCompleted.addEventListener('click', showCompleted);
     statusAll.addEventListener('click', showAll);
     statusActive.addEventListener('click', showActive);
+    nightModeIcon.addEventListener('click', toggleIcon);
   }
 
 
