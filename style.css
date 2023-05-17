@@ -118,7 +118,7 @@ body::after {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 48px;
+  padding-bottom: 8px;
   margin-bottom: 40px;
   color: #fff;
 }
