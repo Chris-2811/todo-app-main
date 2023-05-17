@@ -23,6 +23,7 @@
   --footer-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5),
     -4px 0px 4px -4px hsla(0, 0%, 0%, 0.25),
     4px 0px 4px -4px hsla(0, 0%, 0%, 0.25);
+  --border-footerCenter: hsl(236, 33%, 92%);
 }
 
 .night-mode {
@@ -40,6 +41,7 @@
   --background-image: url("images/bg-desktop-dark.jpg");
   --background-circle: hsl(237, 14%, 26%);
   --footer-shadow: 0px 0px 0px 0px;
+  --border-footerCenter: none;
 }
 
 * {
@@ -84,8 +86,7 @@ body::after {
 }
 
 .todo-input {
-  display: grid;
-  grid-template-columns: 15% 85%;
+  display: flex;
   position: relative;
   max-height: 48px;
   margin-bottom: 16px;
@@ -104,7 +105,7 @@ body::after {
   justify-content: flex-start;
   align-items: center;
   border: none;
-  padding: 18px 0 20px 24px;
+  padding: 14px 12px 14px 20px;
   border-radius: 5px 0 0 5px;
 }
 
@@ -160,18 +161,31 @@ body::after {
   justify-content: center;
   gap: 10px;
   position: absolute;
-  top: 74px;
+  top: 64px;
   left: 50%;
   width: 100%;
   transform: translateX(-50%);
   padding: 18px 80px 19px 80px;
-  background-color: var(--dark-grayish-blue);
+  font-weight: 700;
+  background-color: var(--background-input);
   border-radius: 5px;
+  border: 1px solid var(--border-footerCenter);
 }
 
 .todo-footer__center .btn:hover {
   cursor: pointer;
   color: var(--bright-blue);
+}
+
+.drag-text {
+  position: absolute;
+  bottom: -104px;
+  left: 50%;
+  width: 70%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: var(--text-color);
+  text-align: center;
 }
 
 #clear {
@@ -185,7 +199,7 @@ body::after {
 /* List Elements */
 
 li {
-  padding: 16px 24px;
+  padding: 16px 20px;
   font-size: 18px;
   max-height: 52px;
   background-color: var(--background-input);
@@ -220,6 +234,10 @@ li {
 
 .i.left-element span {
   margin-top: 3px;
+}
+
+.fa-circle {
+  font-size: 20px;
 }
 
 .fa-circle:hover {
@@ -299,6 +317,14 @@ li {
     margin-top: 3px;
     font-size: 14px;
   }
+
+  #item-input {
+    font-size: 14px;
+  }
+
+  #item-list li span {
+    font-size: 13px;
+  }
 }
 
 @media (min-width: 740px) {
@@ -308,15 +334,18 @@ li {
   }
 
   #item-input {
-    font-size: 18px;
+    font-size: 16px;
+    padding-left: 0px;
   }
 
   .todo-input {
-    display: grid;
-    grid-template-columns: 15% 85%;
     position: relative;
     min-height: 64px;
     margin-bottom: 24px;
+  }
+
+  #item-input {
+    padding-left: 0px;
   }
 
   .todo-input * {
@@ -332,7 +361,7 @@ li {
     max-height: 50px;
   }
 
-  .i.left-element {
+  .left-element {
     max-height: 24px;
     font-size: 24px;
   }
@@ -353,12 +382,32 @@ li {
     padding: 20px 24px 20px;
     max-height: 64px;
   }
+
+  #item-list li span {
+    font-size: 13px;
+  }
+
+  .i.left-element {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    max-height: 20px;
+    font-size: 20px;
+  }
+
+  .icon {
+    padding: 20px 24px;
+  }
 }
 
 @media (min-width: 940px) {
   .container {
     width: 50%;
     max-width: 540px;
+  }
+
+  #item-input {
+    font-size: 18px;
   }
 
   .todo-footer__center {
@@ -378,8 +427,23 @@ li {
     padding: 16px 24px 20px 24px;
   }
 
+  .drag-text {
+    position: absolute;
+    bottom: -58px;
+    left: 50%;
+    width: 70%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: var(--text-color);
+    text-align: center;
+  }
+
   .i.left-element span {
     margin-top: 3px;
+    font-size: 16px;
+  }
+
+  #item-list li span {
     font-size: 16px;
   }
 }
@@ -388,8 +452,7 @@ li {
     max-width: 540px;
   }
 
-  .i.left-element span {
-    margin-top: 3px;
+  #item-list li span {
     font-size: 18px;
   }
 }

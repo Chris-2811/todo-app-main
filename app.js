@@ -18,11 +18,7 @@ const statusCompleted = document.getElementById('status-complete');
 toggleButton.addEventListener('click', function(e) {
   root.classList.toggle('night-mode');
   
-  const body = document.body;
-  const backgroundImage = root.classList.contains('night-mode')
-    ? 'url(path/to/nighttime-image.jpg)'
-    : 'url(path/to/daytime-image.jpg)';
-  body.style.backgroundImage = backgroundImage;
+  
 });
 
 // set input cursor
@@ -163,11 +159,12 @@ function checkUI() {
     itemList.style.display = 'block';
   }
 
-  
+  const activeItems = document.querySelectorAll('.circle.active');
 
-  const itemsLeft = document.getElementById('items-left');
+  const nonActiveItems = items.length - activeItems.length;
+  console.log(nonActiveItems)
 
-  itemsLeft.textContent = `${items.length} items left`;
+  itemsLeft.textContent = `${nonActiveItems} items left`;
   
 }
 
